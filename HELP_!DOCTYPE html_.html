@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocuidado Diario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const frases = [
+                "Tómate un respiro profundo y relájate.",
+                "Date permiso para descansar hoy.",
+                "Escribe tres cosas por las que estás agradecido.",
+                "Escucha tu canción favorita y disfrútala.",
+                "Da un pequeño paseo y disfruta del aire fresco.",
+                "Bebe un vaso de agua y estírate un poco.",
+                "Mira al cielo y agradece el presente."
+            ];
+            
+            const citasAutoayuda = [
+                "El amor propio es el comienzo de un romance para toda la vida. - Oscar Wilde",
+                "Haz de ti una prioridad. - Anónimo",
+                "Eres suficiente tal como eres. - Brené Brown"
+            ];
+
+            function mostrarMensaje() {
+                const mensaje = frases[Math.floor(Math.random() * frases.length)];
+                document.getElementById("mensaje").innerText = mensaje;
+                document.getElementById("mensaje").classList.add("animate__animated", "animate__fadeIn");
+            }
+            
+            function nuevaCita() {
+                const cita = citasAutoayuda[Math.floor(Math.random() * citasAutoayuda.length)];
+                document.getElementById("cita").innerText = cita;
+                document.getElementById("cita").classList.add("animate__animated", "animate__fadeIn");
+            }
+            
+            document.getElementById("botonFrase").addEventListener("click", mostrarMensaje);
+            document.getElementById("botonOtraFrase").addEventListener("click", mostrarMensaje);
+            document.getElementById("botonApoyo").addEventListener("click", nuevaCita);
+        });
+    </script>
+</head>
+<body class="bg-light text-center p-5">
+    <div class="container">
+        <h1 class="mb-4">💖 Autocuidado Diario 💖</h1>
+        <button id="botonFrase" class="btn btn-primary btn-lg mb-3">¿Qué necesito hoy para sentirme bien?</button>
+        <div id="mensaje" class="fs-4 fw-bold text-primary my-3"></div>
+        <button id="botonOtraFrase" class="btn btn-success mb-3">Dame otro consejo</button>
+        <button id="botonApoyo" class="btn btn-warning mb-3">¿Necesitas más apoyo?</button>
+        <div id="cita" class="fs-5 fw-bold text-secondary my-3"></div>
+    </div>
+</body>
+</html>
